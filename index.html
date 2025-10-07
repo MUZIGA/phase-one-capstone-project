@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,15 +6,19 @@
   <title>Christian Book Explorer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-50 flex flex-col min-h-screen">
   <nav class="bg-indigo-700 text-white">
-    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <a href="index.html" class="text-2xl font-bold">📚 Book Explorer</a>
-      <div class="hidden md:flex space-x-4">
-        <a href="index.html" class="hover:text-gray-200">Home</a>
-        <a href="favorite.html" class="hover:text-gray-200">Favorites</a>
-        <a href="about.html" class="hover:text-gray-200">About</a>
+      <button class="md:hidden p-2 rounded hover:bg-indigo-600" aria-label="Toggle menu" data-nav-toggle>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+      <div class="hidden md:flex space-x-4" data-nav-menu>
+        <a href="index.html" class="hover:text-gray-200 block py-2 md:py-0">Home</a>
+        <a href="favorite.html" class="hover:text-gray-200 block py-2 md:py-0">Favorites</a>
+        <a href="about.html" class="hover:text-gray-200 block py-2 md:py-0">About</a>
       </div>
     </div>
   </nav>
@@ -23,45 +28,16 @@
   </header>
   <main class="container mx-auto px-4 py-10 flex-grow">
     <h2 class="text-2xl font-semibold mb-6">📖 Featured Books</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      <a href="mere-christianity.html" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-        <img src="image.png" alt="Mere Christianity" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">Mere Christianity</h3>
-          <p class="text-gray-600 mb-2">by C.S. Lewis</p>
-          <span class="text-indigo-600 text-sm font-semibold">Read Book →</span>
-        </div>
-      </a>
-      <a href="knowing-god.html" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-        <img src="image2.jpeg" alt="Knowing God" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">Knowing God</h3>
-          <p class="text-gray-600 mb-2">by J.I. Packer</p>
-          <span class="text-indigo-600 text-sm font-semibold">Read Book →</span>
-        </div>
-      </a>
-      <a href="pursuit-of-god.html" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-        <img src="image 3_.jpg" alt="The Pursuit of God" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">The Pursuit of God</h3>
-          <p class="text-gray-600 mb-2">by A.W. Tozer</p>
-          <span class="text-indigo-600 text-sm font-semibold">Read Book →</span>
-        </div>
-      </a>
-      <a href="desiring-god.html" class="block bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-        <img src="image 4.jpg" alt="Desiring God" class="w-full h-48 object-cover">
-        <div class="p-4">
-          <h3 class="font-bold text-lg">Desiring God</h3>
-          <p class="text-gray-600 mb-2">by John Piper</p>
-          <span class="text-indigo-600 text-sm font-semibold">Read Book →</span>
-        </div>
-      </a>
-
+    <div class="flex justify-center mb-6">
+      <input id="search-input" class="border p-2 rounded w-2/3" placeholder="Search Google Books...">
+      <button id="search-btn" class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded ml-2">Search</button>
     </div>
+    <div id="book-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
   </main>
-  <footer class="bg-indigo-700 text-white text-center py-4">
+  <footer class="bg-indigo-700 text-white text-center py-4 mt-auto">
     &copy; 2025 Christian Book Explorer
   </footer>
-
+  <script type="module" src="nav.js"></script>
+  <script type="module" src="../lab2/index.js"></script>
 </body>
 </html>

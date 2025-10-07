@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,32 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-black min-h-screen flex flex-col text-white">
-  <nav class="bg-indigo-700 text-white p-4 flex justify-between items-center">
-    <a href="index.html" class="text-xl font-bold">📚 Book Explorer</a>
-    <div class="space-x-4">
-      <a href="index.html" class="hover:text-gray-200">Home</a>
-      <a href="favorite.html" class="hover:text-gray-200">Favorites</a>
-      <a href="about.html" class="hover:text-gray-200 font-semibold">About</a>
+<body class="bg-gray-50 min-h-screen flex flex-col text-gray-800">
+  <nav class="bg-indigo-700 text-white">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="text-xl font-bold">📚 Book Explorer</a>
+      <button class="md:hidden p-2 rounded hover:bg-indigo-600" aria-label="Toggle menu" data-nav-toggle>
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg>
+      </button>
+      <div class="hidden md:flex space-x-4" data-nav-menu>
+        <a href="index.html" class="hover:text-gray-200 block py-2 md:py-0">Home</a>
+        <a href="favorite.html" class="hover:text-gray-200 block py-2 md:py-0">Favorites</a>
+        <a href="about.html" class="hover:text-gray-200 font-semibold block py-2 md:py-0">About</a>
+      </div>
     </div>
   </nav>
-  <main class="flex-grow container mx-auto px-4 py-10 max-w-2xl text-center">
+  <main class="flex-grow container mx-auto px-4 py-10 max-w-2xl text-center leading-relaxed space-y-8">
     <h1 class="text-3xl font-bold mb-6">About Book Explorer</h1>
 
-    <section class="mb-6">
+    <section>
       <h2 class="text-xl font-semibold mb-2">Purpose</h2>
       <p>Discover, read, and save your favorite Christian books online.</p>
     </section>
 
-    <section class="mb-6">
+    <section>
       <h2 class="text-xl font-semibold mb-2">Built With</h2>
       <p>HTML, TailwindCSS, and JavaScript for interactivity.</p>
     </section>
 
-    <section class="mb-6">
-      <img src="book.jpeg" alt="Christian Book" class="w-40 h-auto mb-4 rounded shadow mx-auto">
+    <section>
       <h2 class="text-xl font-semibold mb-2">How to Use</h2>
-      <ul class="list-disc list-inside text-left mx-auto max-w-md">
+      <ul class="list-disc list-inside text-left mx-auto max-w-md space-y-2">
         <li>Browse books on homepage</li>
         <li>Click to read details</li>
         <li>Add to Favorites</li>
@@ -40,8 +43,26 @@
     </section>
 
     <section>
+      <img src="book.jpeg" alt="Featured Christian Book" class="w-40 h-auto mb-4 rounded shadow mx-auto">
+      <h2 class="text-xl font-semibold mb-2">Featured Christian Books</h2>
+      <ul class="list-disc list-inside text-left mx-auto max-w-md space-y-1">
+        <li><strong>Mere Christianity</strong> by C.S. Lewis</li>
+        <li><strong>Knowing God</strong> by J.I. Packer</li>
+        <li><strong>The Pursuit of God</strong> by A.W. Tozer</li>
+        <li><strong>Desiring God</strong> by John Piper</li>
+      </ul>
+    </section>
+  
+    <section>
       <h2 class="text-xl font-semibold mb-2">Mission</h2>
       <p>Inspire spiritual growth by providing easy access to Christian literature.</p>
     </section>
   </main>
-  
+
+  <footer class="bg-indigo-700 text-white text-center py-4 mt-auto">
+    &copy; 2025 Book Explorer
+  </footer>
+  <script type="module" src="nav.js"></script>
+
+</body>
+</html>
